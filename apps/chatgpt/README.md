@@ -33,7 +33,8 @@ npm run dev:server
 ## ChatGPT Developer Mode 연결
 
 1. 서버를 HTTPS로 노출합니다. 개발 중에는 `ngrok http 8788` 같은 터널을 사용합니다.
-2. 공개 주소를 `NLC_CHATGPT_APP_BASE_URL`로 설정한 뒤 서버를 다시 실행합니다.
+2. 공개 주소가 있으면 `NLC_CHATGPT_APP_BASE_URL`로 설정한 뒤 서버를 다시 실행합니다.
+   Render에서는 기본 제공되는 `RENDER_EXTERNAL_URL`을 자동으로 사용하므로 별도 설정 없이도 됩니다.
 3. ChatGPT Developer Mode에서 `https://<public-domain>/mcp`를 connector URL로 등록합니다.
 4. 새 대화에서 아래 예시 프롬프트로 테스트합니다.
 
@@ -58,7 +59,7 @@ npm run smoke
 ## 환경 변수
 
 - `PORT`: 로컬/배포 서버 포트
-- `NLC_CHATGPT_APP_BASE_URL`: widget가 정적 자산을 참조할 공개 기준 URL
+- `NLC_CHATGPT_APP_BASE_URL`: widget가 정적 자산을 참조할 공개 기준 URL. Render 배포에서는 `RENDER_EXTERNAL_URL`이 자동으로 대체됩니다.
 
 ## 도구
 

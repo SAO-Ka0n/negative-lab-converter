@@ -17,7 +17,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distRoot = path.resolve(__dirname, "..");
 const staticRoot = path.join(distRoot, "static");
 const port = Number(process.env.PORT || "8788");
-const baseUrl = process.env.NLC_CHATGPT_APP_BASE_URL || `http://127.0.0.1:${port}/`;
+
+function normalizeBaseUrl(value: string) {
+  return value.endsWith("/") ? value : `${value}/`;
+}
+
+const baseUrl = normalizeBaseUrl(
+  process.env.NLC_CHATGPT_APP_BASE_URL ||
+    process.env.RENDER_EXTERNAL_URL ||
+    `http://127.0.0.1:${port}/`
+);
 
 async function serveStaticFile(requestPath: string, req: any, res: any) {
   const normalizedPath = requestPath.replace(/^\/+/, "");

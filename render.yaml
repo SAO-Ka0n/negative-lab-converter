@@ -9,5 +9,3 @@ services:
     envVars:
       - key: PORT
         value: "8788"
-      - key: NLC_CHATGPT_APP_BASE_URL
-        sync: false
