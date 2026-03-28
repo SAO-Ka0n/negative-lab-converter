@@ -1,0 +1,95 @@
+{
+  "name": "negative-lab-converter",
+  "version": "0.1.0",
+  "private": true,
+  "author": "h.g",
+  "description": "Offline-first photo converter packaged for web, mobile, and desktop.",
+  "main": "electron/main.js",
+  "scripts": {
+    "build": "node scripts/build-web.mjs",
+    "build:launch": "node scripts/build-launch-site.mjs",
+    "chatgpt:build": "cd apps/chatgpt && npm run build",
+    "chatgpt:dev": "cd apps/chatgpt && npm run dev",
+    "chatgpt:start": "cd apps/chatgpt && npm run start",
+    "chatgpt:smoke": "cd apps/chatgpt && npm run smoke",
+    "chatgpt:test": "cd apps/chatgpt && npm run test",
+    "commercial:check": "node scripts/release-readiness.mjs",
+    "dev": "npm run build && node scripts/dev-server.mjs dist 4173",
+    "preview": "node scripts/dev-server.mjs dist 4174",
+    "electron": "npm run build && electron .",
+    "desktop:dir": "npm run build && electron-builder --dir",
+    "desktop:dist": "npm run build && electron-builder",
+    "desktop:win": "npm run build && electron-builder --win nsis --x64",
+    "desktop:win:arm64": "npm run build && electron-builder --win nsis --arm64",
+    "mobile:sync": "npm run build && cap sync",
+    "mobile:android": "npm run build && cap run android",
+    "mobile:ios": "npm run build && cap run ios",
+    "smoke": "npm run build && node scripts/smoke-test.mjs"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/ios": "^7.0.0",
+    "@electron/notarize": "^3.1.1",
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.0",
+    "esbuild": "^0.27.4",
+    "libheif-js": "^1.19.8",
+    "libraw-wasm": "^1.1.2",
+    "pako": "^2.1.0",
+    "playwright-core": "^1.58.2",
+    "utif": "^3.1.0"
+  },
+  "build": {
+    "appId": "com.negativelab.converter",
+    "productName": "Negative Lab Converter",
+    "afterSign": "scripts/notarize.cjs",
+    "icon": "icons/app-icon.png",
+    "compression": "maximum",
+    "copyright": "Copyright © 2026 h.g",
+    "directories": {
+      "output": "release"
+    },
+    "electronLanguages": [
+      "en-US",
+      "ko"
+    ],
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
+      "category": "public.app-category.photography",
+      "gatekeeperAssess": false,
+      "hardenedRuntime": true,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.inherit.plist"
+    },
+    "win": {
+      "artifactName": "${productName} Setup ${version}.${ext}",
+      "icon": "icons/app-icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "runAfterFinish": true,
+      "shortcutName": "Negative Lab Converter",
+      "uninstallDisplayName": "Negative Lab Converter",
+      "installerIcon": "icons/app-icon.ico",
+      "uninstallerIcon": "icons/app-icon.ico",
+      "installerHeaderIcon": "icons/app-icon.ico"
+    }
+  }
+}

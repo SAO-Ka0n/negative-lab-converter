@@ -1,0 +1,10 @@
+node_modules/
+apps/chatgpt/node_modules/
+dist/
+apps/chatgpt/dist/
+release/
+.DS_Store
+.build-cache/
+apps/chatgpt/.env
+apps/chatgpt/.env.local
+apps/chatgpt/.env.*.local

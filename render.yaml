@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: negative-lab-converter-chatgpt
+    runtime: docker
+    plan: starter
+    rootDir: apps/chatgpt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    envVars:
+      - key: PORT
+        value: "8788"
+      - key: NLC_CHATGPT_APP_BASE_URL
+        sync: false

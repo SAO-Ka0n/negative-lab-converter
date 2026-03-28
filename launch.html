@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="오프라인 RAW, HEIC, TIFF 사진 변환 앱 Negative Lab Converter 판매 페이지"
+    />
+    <title>Negative Lab Converter Launch</title>
+    <link rel="icon" href="./icons/app-icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./launch.css" />
+    <script src="./product-config.js"></script>
+    <script src="./launch-config.js"></script>
+    <script src="./launch.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#downloads">다운로드 섹션으로 바로가기</a>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main class="page-shell">
+      <section class="hero-panel">
+        <header class="topline">
+          <p class="eyebrow">Desktop Release Sheet</p>
+          <div class="topline-badges" aria-label="지원 플랫폼">
+            <span>Windows</span>
+            <span>macOS</span>
+            <span>Android Ready</span>
+            <span>iOS Ready</span>
+          </div>
+        </header>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="serial">Release Line NLC-26A</p>
+            <h1>Negative Lab Converter</h1>
+            <p class="hero-lede">
+              사진을 서버에 올리지 않고 이 기기 안에서 바로 변환합니다. RAW,
+              HEIC, TIFF, PNG, JPEG 파일을 불러오고 PNG, JPEG, WebP, TIFF로
+              저장할 수 있는 오프라인 사진 유틸리티입니다.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-link" href="#downloads">다운로드 보기</a>
+              <a
+                class="primary-link accent-link"
+                data-link-key="purchaseUrl"
+                href=""
+                >구매 문의</a
+              >
+              <a class="secondary-link" href="#pricing">가격안 보기</a>
+            </div>
+
+            <ul class="hero-points">
+              <li>클라우드 업로드 없이 로컬 변환</li>
+              <li>HEIC, TIFF, RAW 계열 입력 지원</li>
+              <li>Windows 설치본과 macOS DMG 바로 제공</li>
+            </ul>
+          </div>
+
+          <aside class="hero-sheet" aria-label="제품 요약">
+            <div class="sheet-head">
+              <span class="sheet-kicker">Product Note</span>
+              <strong>오프라인 처리 중심</strong>
+            </div>
+            <div class="sheet-grid">
+              <article>
+                <span>입력</span>
+                <strong>RAW / HEIC / TIFF / PNG / JPEG / WebP</strong>
+              </article>
+              <article>
+                <span>출력</span>
+                <strong>PNG / JPEG / WebP / TIFF</strong>
+              </article>
+              <article>
+                <span>배포</span>
+                <strong>Windows 설치본, macOS DMG</strong>
+              </article>
+              <article>
+                <span>포지션</span>
+                <strong>사진 작업용 로컬 유틸리티</strong>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="proof-panel">
+        <div class="section-head">
+          <p class="section-chip">Why This Product</p>
+          <h2>도구처럼 보여야 하고, 도구처럼 바로 써야 합니다.</h2>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card paper-card">
+            <span class="card-tag">01</span>
+            <h3>로컬 처리</h3>
+            <p>
+              개인정보나 원본 파일을 외부 서버에 올리지 않고 기기 안에서
+              바로 변환합니다.
+            </p>
+          </article>
+          <article class="proof-card ink-card">
+            <span class="card-tag">02</span>
+            <h3>실사용 포맷 대응</h3>
+            <p>
+              일반 이미지뿐 아니라 HEIC, TIFF, RAW 계열까지 받아서 작업 흐름
+              중간에서 바로 정리할 수 있습니다.
+            </p>
+          </article>
+          <article class="proof-card paper-card">
+            <span class="card-tag">03</span>
+            <h3>직배포 우선 구조</h3>
+            <p>
+              지금 바로 Windows 설치본과 macOS 배포본으로 판매를 시작할 수
+              있는 구조입니다.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="readiness-panel">
+        <div class="section-head">
+          <p class="section-chip">Launch Readiness</p>
+          <h2>판매에 필요한 설정이 채워졌는지 바로 확인합니다.</h2>
+        </div>
+
+        <div class="readiness-grid">
+          <article class="readiness-card">
+            <span class="section-chip">현재 상태</span>
+            <ul class="readiness-list" id="readinessList">
+              <li>판매 준비 상태를 계산하는 중입니다.</li>
+            </ul>
+          </article>
+
+          <article class="readiness-card subtle-card">
+            <span class="section-chip">판매자 정보</span>
+            <dl class="contact-grid">
+              <div>
+                <dt>판매자</dt>
+                <dd id="sellerName">확인 중</dd>
+              </div>
+              <div>
+                <dt>지원 이메일</dt>
+                <dd id="supportEmail">설정 확인 중</dd>
+              </div>
+              <div>
+                <dt>웹사이트</dt>
+                <dd id="websiteLabel">설정 확인 중</dd>
+              </div>
+              <div>
+                <dt>데스크톱 가격</dt>
+                <dd id="desktopPriceLabel">$24</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="downloads-panel" id="downloads">
+        <div class="section-head">
+          <p class="section-chip">Current Build</p>
+          <h2>지금 바로 배포 가능한 파일</h2>
+        </div>
+
+        <div class="download-grid">
+          <article class="download-card">
+            <div class="download-meta">
+              <span class="download-kicker">Windows Installer</span>
+              <h3>Setup 0.1.0</h3>
+              <p>설치 마법사 포함. 바탕화면/시작 메뉴 바로가기 생성 지원.</p>
+            </div>
+            <a
+              class="download-link"
+              data-link-key="windowsDownloadUrl"
+              href=""
+              >Windows 설치본 받기</a
+            >
+          </article>
+
+          <article class="download-card">
+            <div class="download-meta">
+              <span class="download-kicker">macOS DMG</span>
+              <h3>arm64 DMG</h3>
+              <p>Apple Silicon 기준 배포본. 판매 전 notarization 적용 권장.</p>
+            </div>
+            <a
+              class="download-link"
+              data-link-key="macDownloadUrl"
+              href=""
+              >macOS DMG 받기</a
+            >
+          </article>
+
+          <article class="download-card subtle-card">
+            <div class="download-meta">
+              <span class="download-kicker">Policy & Copy</span>
+              <h3>출시 문서</h3>
+              <p>개인정보처리방침, 스토어 설명문, 출시 체크리스트 초안 포함.</p>
+            </div>
+            <div class="doc-links">
+              <a data-doc-key="privacyPolicyUrl" href="./PRIVACY_POLICY.md">개인정보처리방침</a>
+              <a data-doc-key="termsUrl" href="./TERMS_OF_USE.md">이용약관</a>
+              <a data-doc-key="refundPolicyUrl" href="./REFUND_POLICY.md">환불 정책</a>
+              <a data-doc-key="noticesUrl" href="./THIRD_PARTY_NOTICES.md">오픈소스 고지</a>
+              <a data-doc-key="storeCopyUrl" href="./STORE_COPY_DRAFT.md">스토어 설명문</a>
+              <a data-doc-key="launchChecklistUrl" href="./LAUNCH_CHECKLIST.md">출시 체크리스트</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="format-panel">
+        <div class="section-head">
+          <p class="section-chip">Format Coverage</p>
+          <h2>지원 형식</h2>
+        </div>
+
+        <div class="format-grid">
+          <article class="format-card">
+            <span class="format-kicker">Input</span>
+            <ul>
+              <li>PNG</li>
+              <li>JPEG</li>
+              <li>WebP</li>
+              <li>AVIF</li>
+              <li>HEIC / HEIF</li>
+              <li>TIFF</li>
+              <li>CR2 / CR3 / CRAW / NEF / ARW / DNG 외 RAW 계열</li>
+            </ul>
+          </article>
+          <article class="format-card">
+            <span class="format-kicker">Output</span>
+            <ul>
+              <li>PNG</li>
+              <li>JPEG</li>
+              <li>WebP</li>
+              <li>TIFF</li>
+              <li>리사이즈</li>
+              <li>JPEG 배경색</li>
+              <li>품질 슬라이더</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="downloads-panel mobile-panel">
+        <div class="section-head">
+          <p class="section-chip">Mobile Stores</p>
+          <h2>모바일은 외부 결제가 아니라 유료 스토어 앱으로 준비합니다.</h2>
+        </div>
+
+        <div class="download-grid">
+          <article class="download-card">
+            <div class="download-meta">
+              <span class="download-kicker">Google Play</span>
+              <h3>Android 유료 앱</h3>
+              <p>출시 후에는 Play Store 상품 페이지로 연결합니다. 외부 결제 링크는 사용하지 않습니다.</p>
+            </div>
+            <a class="download-link" data-link-key="androidStoreUrl" href="">Google Play 보기</a>
+          </article>
+
+          <article class="download-card">
+            <div class="download-meta">
+              <span class="download-kicker">App Store</span>
+              <h3>iPhone / iPad 유료 앱</h3>
+              <p>출시 후에는 App Store 상품 페이지로 연결합니다. 외부 결제 링크는 사용하지 않습니다.</p>
+            </div>
+            <a class="download-link" data-link-key="iosStoreUrl" href="">App Store 보기</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="pricing-panel" id="pricing">
+        <div class="section-head">
+          <p class="section-chip">Launch Pricing</p>
+          <h2>권장 판매 구조</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="price-kicker">Recommended</span>
+            <h3>정식판 1회 구매</h3>
+            <p class="price">$19 - $29</p>
+            <ul>
+              <li>개인 사용자용 영구 라이선스</li>
+              <li>RAW / HEIC / TIFF 변환 포함</li>
+              <li>데스크톱 직배포에 가장 잘 맞는 방식</li>
+            </ul>
+          </article>
+
+          <article class="price-card muted">
+            <span class="price-kicker">Expansion</span>
+            <h3>무료 + Pro 업그레이드</h3>
+            <p class="price">$24.99</p>
+            <ul>
+              <li>기본판 무료 배포</li>
+              <li>배치 변환, 메타데이터 유지, 프리셋은 Pro</li>
+              <li>향후 모바일 확장 시에도 구조를 가져가기 쉬움</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pricing-actions">
+          <a
+            class="download-link"
+            data-link-key="purchaseUrl"
+            href=""
+            >데스크톱 정식판 구매</a
+          >
+          <a
+            class="secondary-link dark-outline"
+            data-link-key="supportUrl"
+            href=""
+            >지원 문의</a
+          >
+        </div>
+      </section>
+
+      <section class="faq-panel">
+        <div class="section-head">
+          <p class="section-chip">FAQ</p>
+          <h2>출시 전 자주 물어볼 항목</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article>
+            <h3>사진이 서버로 업로드되나요?</h3>
+            <p>기본 앱 동작 기준으로는 업로드 없이 로컬에서 직접 처리합니다.</p>
+          </article>
+          <article>
+            <h3>지금 바로 판매 가능한가요?</h3>
+            <p>
+              결제 링크, 지원 이메일, 서명된 설치본, 정책 문서가 모두 채워지면
+              직판을 시작할 수 있습니다.
+            </p>
+          </article>
+          <article>
+            <h3>스토어 등록도 가능한가요?</h3>
+            <p>
+              가능합니다. 다만 모바일은 유료 스토어 앱으로 별도 출시하고,
+              Microsoft Store는 회사 계정 준비 후 2차로 미루는 구성이 더
+              안전합니다.
+            </p>
+          </article>
+          <article>
+            <h3>현재 가장 적합한 수익화는 무엇인가요?</h3>
+            <p>현재 앱 성격상 월 구독보다 데스크톱 1회 구매가 더 자연스럽습니다.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

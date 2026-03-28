@@ -1,0 +1,35 @@
+{
+  "name": "@negative-lab/chatgpt-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "ChatGPT App for Negative Lab Converter",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --watch",
+    "dev:server": "node dist/server/index.js",
+    "preview": "npm run build && npm run start",
+    "smoke": "node scripts/smoke.mjs",
+    "start": "node dist/server/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/**/*.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.0.1",
+    "@modelcontextprotocol/sdk": "^1.20.2",
+    "libheif-js": "^1.19.8",
+    "libraw-wasm": "^1.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "utif": "^3.1.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "esbuild": "^0.27.4",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
