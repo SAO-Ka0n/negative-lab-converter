@@ -1,11 +1,12 @@
 FROM node:20-bookworm-slim
 
-WORKDIR /app
+WORKDIR /app/apps/chatgpt
 
-COPY package.json package-lock.json ./
+COPY apps/chatgpt/package.json apps/chatgpt/package-lock.json ./
 RUN npm ci
 
-COPY . .
+COPY apps/chatgpt /app/apps/chatgpt
+COPY packages /app/packages
 RUN npm run build
 
 ENV PORT=8788
