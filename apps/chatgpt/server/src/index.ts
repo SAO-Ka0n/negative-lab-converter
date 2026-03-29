@@ -116,6 +116,16 @@ const httpServer = createServer(async (req, res) => {
     return;
   }
 
+  if ((req.method === "GET" || req.method === "HEAD") && url.pathname === "/privacy-policy") {
+    await serveStaticFile("/static/privacy-policy.html", req, res);
+    return;
+  }
+
+  if ((req.method === "GET" || req.method === "HEAD") && url.pathname === "/app-info") {
+    await serveStaticFile("/static/app-info.html", req, res);
+    return;
+  }
+
   if ((req.method === "GET" || req.method === "HEAD") && url.pathname.startsWith("/static/")) {
     try {
       await serveStaticFile(url.pathname, req, res);
