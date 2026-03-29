@@ -2,7 +2,7 @@ services:
   - type: web
     name: negative-lab-converter-chatgpt
     runtime: docker
-    plan: starter
+    plan: free
     rootDir: apps/chatgpt
     dockerfilePath: ./Dockerfile
     healthCheckPath: /healthz
