@@ -68,3 +68,9 @@ npm run smoke
 - `recommend_export_preset`
 - `inspect_format_support`
 - `report_conversion_result`
+
+## 제출 문서
+
+- `SUBMISSION_CHECKLIST.md`
+- `TEST_PROMPTS.md`
+- `MONETIZATION_NOTES.md`
