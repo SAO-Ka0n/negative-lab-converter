@@ -1,6 +1,6 @@
 import { registerAppTool } from "@modelcontextprotocol/ext-apps/server";
-import { outputFormats } from "../../../../../packages/converter-core/src/formats";
-import { recommendExportPreset } from "../../../../../packages/converter-core/src/presets";
+import { outputFormats } from "../../../shared/converter-core/src/formats";
+import { recommendExportPreset } from "../../../shared/converter-core/src/presets";
 import { createSession } from "../lib/sessions";
 import { TEMPLATE_URI } from "../lib/resource-registry";
 import { openWorkspaceInputSchema } from "../lib/schemas";

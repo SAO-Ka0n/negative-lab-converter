@@ -1,4 +1,4 @@
-import type { ConversionIntent } from "../../../../../packages/converter-core/src/presets";
+import type { ConversionIntent } from "../../../shared/converter-core/src/presets";
 
 interface SettingsPanelProps {
   background: string;

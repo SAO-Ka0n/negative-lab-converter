@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { decodeSourceFile, convertDecodedImage, type DecodedImage } from "../../../../packages/converter-core/src/browser-decoders";
-import { normalizeUnknownError } from "../../../../packages/converter-core/src/errors";
-import { inspectFormatSupport } from "../../../../packages/converter-core/src/formats";
-import { fitDimensionsWithinLimits, validateOutputDimensions } from "../../../../packages/converter-core/src/limits";
+import { decodeSourceFile, convertDecodedImage, type DecodedImage } from "../../shared/converter-core/src/browser-decoders";
+import { normalizeUnknownError } from "../../shared/converter-core/src/errors";
+import { inspectFormatSupport } from "../../shared/converter-core/src/formats";
+import { fitDimensionsWithinLimits, validateOutputDimensions } from "../../shared/converter-core/src/limits";
 import {
   recommendExportPreset,
   type ConversionIntent,
   type ExportPreset,
-} from "../../../../packages/converter-core/src/presets";
+} from "../../shared/converter-core/src/presets";
 import { ComparePane } from "./components/ComparePane";
 import { ConverterShell } from "./components/ConverterShell";
 import { DownloadBar } from "./components/DownloadBar";

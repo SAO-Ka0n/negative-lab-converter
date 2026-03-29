@@ -1,5 +1,5 @@
 import { registerAppTool } from "@modelcontextprotocol/ext-apps/server";
-import { inspectFormatSupport } from "../../../../../packages/converter-core/src/formats";
+import { inspectFormatSupport } from "../../../shared/converter-core/src/formats";
 import { inspectSupportInputSchema } from "../lib/schemas";
 
 function noAuthSecurity() {

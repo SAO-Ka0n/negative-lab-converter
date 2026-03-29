@@ -1,10 +1,10 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { probeSource } from "../../../packages/converter-core/src/file-sniff";
-import { inspectFormatSupport } from "../../../packages/converter-core/src/formats";
-import { fitDimensionsWithinLimits, validateOutputDimensions } from "../../../packages/converter-core/src/limits";
-import { recommendExportPreset } from "../../../packages/converter-core/src/presets";
+import { probeSource } from "../shared/converter-core/src/file-sniff";
+import { inspectFormatSupport } from "../shared/converter-core/src/formats";
+import { fitDimensionsWithinLimits, validateOutputDimensions } from "../shared/converter-core/src/limits";
+import { recommendExportPreset } from "../shared/converter-core/src/presets";
 
 test("inspectFormatSupport marks CR3 as preview-first raw", () => {
   const result = inspectFormatSupport({ fileName: "IMG_5752.CR3" });

@@ -1,4 +1,4 @@
-import { normalizeFormatLabel } from "../../../../../packages/converter-core/src/formats";
+import { normalizeFormatLabel } from "../../../shared/converter-core/src/formats";
 
 interface UploadPanelProps {
   fileName?: string;

@@ -1,5 +1,5 @@
 import { registerAppTool } from "@modelcontextprotocol/ext-apps/server";
-import { recommendExportPreset } from "../../../../../packages/converter-core/src/presets";
+import { recommendExportPreset } from "../../../shared/converter-core/src/presets";
 import { recommendPresetInputSchema } from "../lib/schemas";
 
 function noAuthSecurity() {

@@ -1,5 +1,5 @@
 import { registerAppTool } from "@modelcontextprotocol/ext-apps/server";
-import { probeSource } from "../../../../../packages/converter-core/src/file-sniff";
+import { probeSource } from "../../../shared/converter-core/src/file-sniff";
 import { analyzeSourceInputSchema } from "../lib/schemas";
 
 function noAuthSecurity() {

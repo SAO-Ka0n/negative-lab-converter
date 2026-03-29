@@ -3,8 +3,8 @@ services:
     name: negative-lab-converter-chatgpt
     runtime: docker
     plan: free
-    rootDir: .
-    dockerfilePath: ./apps/chatgpt/Dockerfile
+    rootDir: apps/chatgpt
+    dockerfilePath: ./Dockerfile
     healthCheckPath: /healthz
     envVars:
       - key: PORT
