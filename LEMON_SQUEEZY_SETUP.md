@@ -54,6 +54,8 @@ Negative Lab Converter의 Windows/macOS 데스크톱 앱을 Lemon Squeezy hosted
   - macOS DMG
   - 1.x 업데이트
 
+상세 문구와 전달 구조는 `LEMON_SQUEEZY_PRODUCT_BLUEPRINT.md`를 기준으로 사용합니다.
+
 ## 주의
 
 - ChatGPT 앱 안에서 이 디지털 상품을 직접 판매하지 않습니다.
