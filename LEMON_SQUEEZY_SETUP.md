@@ -55,6 +55,7 @@ Negative Lab Converter의 Windows/macOS 데스크톱 앱을 Lemon Squeezy hosted
   - 1.x 업데이트
 
 상세 문구와 전달 구조는 `LEMON_SQUEEZY_PRODUCT_BLUEPRINT.md`를 기준으로 사용합니다.
+판매 화면에 바로 붙여넣을 카피는 `LEMON_SQUEEZY_STORE_COPY.md`를 사용합니다.
 
 ## 주의
 

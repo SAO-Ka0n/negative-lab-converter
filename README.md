@@ -91,6 +91,7 @@ npm run build:launch
 
 판매 전략 정리는 `SALES_PLAYBOOK.md`, Lemon Squeezy 연결 메모는 `LEMON_SQUEEZY_SETUP.md`에 있습니다.
 상품 구성 초안은 `LEMON_SQUEEZY_PRODUCT_BLUEPRINT.md`에 있습니다.
+복붙용 판매 문구는 `LEMON_SQUEEZY_STORE_COPY.md`에 있습니다.
 
 ## ChatGPT 앱
 
