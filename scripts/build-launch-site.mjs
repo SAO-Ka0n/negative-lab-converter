@@ -22,6 +22,8 @@ const filesToCopy = [
 const supportEmail = process.env.NLC_SUPPORT_EMAIL?.trim() || "";
 const deploymentConfig = {
   androidStoreUrl: process.env.NLC_ANDROID_STORE_URL?.trim() || null,
+  checkoutProvider: process.env.NLC_CHECKOUT_PROVIDER?.trim() || "",
+  desktopPriceLabel: process.env.NLC_DESKTOP_PRICE_LABEL?.trim() || "",
   iosStoreUrl: process.env.NLC_IOS_STORE_URL?.trim() || null,
   macDownloadUrl: process.env.NLC_MAC_DOWNLOAD_URL?.trim() || null,
   purchaseUrl: process.env.NLC_PURCHASE_URL?.trim() || null,
@@ -32,6 +34,7 @@ const deploymentConfig = {
     (supportEmail
       ? `mailto:${supportEmail}?subject=${encodeURIComponent("Negative Lab Converter Support")}`
       : null),
+  webDemoUrl: process.env.NLC_WEB_DEMO_URL?.trim() || null,
   websiteUrl: process.env.NLC_WEBSITE_URL?.trim() || "",
   windowsDownloadUrl: process.env.NLC_WINDOWS_DOWNLOAD_URL?.trim() || null,
 };

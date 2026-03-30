@@ -45,6 +45,14 @@ function mergeConfig() {
         launchOverrides.androidStoreUrl,
         baseProductConfig.commerce?.androidStoreUrl || ""
       ),
+      checkoutProvider: pickOverride(
+        launchOverrides.checkoutProvider,
+        baseProductConfig.commerce?.checkoutProvider || ""
+      ),
+      desktopPriceLabel: pickOverride(
+        launchOverrides.desktopPriceLabel,
+        baseProductConfig.commerce?.desktopPriceLabel || ""
+      ),
       desktopPurchaseUrl: pickOverride(
         launchOverrides.purchaseUrl,
         baseProductConfig.commerce?.desktopPurchaseUrl || ""
@@ -61,6 +69,10 @@ function mergeConfig() {
         launchOverrides.windowsDownloadUrl,
         baseProductConfig.commerce?.windowsDownloadUrl || ""
       ),
+      webDemoUrl: pickOverride(
+        launchOverrides.webDemoUrl,
+        baseProductConfig.commerce?.webDemoUrl || ""
+      ),
     },
     links: {
       ...baseProductConfig.links,
@@ -71,6 +83,10 @@ function mergeConfig() {
       supportUrl: pickOverride(
         launchOverrides.supportUrl,
         createMailto(supportEmail, "Negative Lab Converter Support")
+      ),
+      webDemoUrl: pickOverride(
+        launchOverrides.webDemoUrl,
+        baseProductConfig.commerce?.webDemoUrl || ""
       ),
       websiteUrl,
     },
@@ -94,6 +110,10 @@ function getConfiguredLink(key) {
 
   if (key === "macDownloadUrl") {
     return launchConfig.commerce.macDownloadUrl;
+  }
+
+  if (key === "webDemoUrl") {
+    return launchConfig.links.webDemoUrl;
   }
 
   if (key === "androidStoreUrl") {
@@ -162,6 +182,7 @@ function populateCommercialDetails() {
   setText("#supportEmail", launchConfig.seller?.supportEmail || "지원 이메일 설정 필요");
   setText("#websiteLabel", launchConfig.seller?.websiteUrl || "웹사이트 설정 필요");
   setText("#desktopPriceLabel", launchConfig.commerce?.desktopPriceLabel || "$24");
+  setText("#checkoutProviderLabel", launchConfig.commerce?.checkoutProvider || "결제 제공업체 설정 필요");
 }
 
 function renderReadiness() {
@@ -173,6 +194,10 @@ function renderReadiness() {
     {
       ok: Boolean(launchConfig.links?.purchaseUrl),
       label: "데스크톱 결제 링크 설정 완료",
+    },
+    {
+      ok: Boolean(launchConfig.links?.webDemoUrl),
+      label: "웹 데모 링크 설정 완료",
     },
     {
       ok: Boolean(launchConfig.commerce?.windowsDownloadUrl),
