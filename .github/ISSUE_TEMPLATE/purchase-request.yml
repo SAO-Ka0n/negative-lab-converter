@@ -1,0 +1,58 @@
+name: Purchase request
+description: Request a purchase link or invoice for Negative Lab Converter
+title: "Purchase request: "
+labels:
+  - sales
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Leave the details below and we will respond with the next purchase step.
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Both
+    validations:
+      required: true
+  - type: dropdown
+    id: use_case
+    attributes:
+      label: Main use case
+      options:
+        - HEIC conversion
+        - TIFF conversion
+        - RAW preview and conversion
+        - Film scan workflow
+        - General local image conversion
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: What are you trying to do?
+      description: Briefly describe the files and workflow you need.
+      placeholder: I need to convert batches of HEIC files to JPEG without uploading them to a cloud service.
+    validations:
+      required: true
+  - type: dropdown
+    id: purchase_type
+    attributes:
+      label: Purchase route
+      options:
+        - Send me a checkout link
+        - Send me an invoice
+        - I want a team license
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Preferred contact method
+      description: Leave an email or another reachable contact if you want a direct response.
+      placeholder: name@example.com
+    validations:
+      required: true

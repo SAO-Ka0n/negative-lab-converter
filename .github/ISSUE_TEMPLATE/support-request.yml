@@ -1,0 +1,55 @@
+name: Support request
+description: Report an issue or ask for help with Negative Lab Converter
+title: "Support request: "
+labels:
+  - support
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the file format, operating system, and what failed.
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+    validations:
+      required: true
+  - type: input
+    id: app_version
+    attributes:
+      label: App version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: input_format
+    attributes:
+      label: Input format
+      placeholder: HEIC / TIFF / CR2 / PNG / JPEG / WebP
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      placeholder: The app opened the file but export failed with an error...
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: 1. Opened the file 2. Selected JPEG export 3. Clicked save...
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Preferred contact method
+      description: Leave an email or another reachable contact if you want a direct response.
+      placeholder: name@example.com
+    validations:
+      required: true
