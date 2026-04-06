@@ -1,6 +1,0 @@
-{
-  "appId": "com.negativelab.converter",
-  "appName": "Negative Lab Converter",
-  "webDir": "dist",
-  "bundledWebRuntime": false
-}

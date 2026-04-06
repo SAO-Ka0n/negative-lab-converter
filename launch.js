@@ -178,22 +178,28 @@ function setText(selector, value) {
 }
 
 function populateCommercialDetails() {
-  setText("#sellerName", launchConfig.seller?.displayName || "판매자 정보 설정 필요");
-  setText("#supportEmail", launchConfig.seller?.supportEmail || "지원 이메일 설정 필요");
-  setText("#websiteLabel", launchConfig.seller?.websiteUrl || "웹사이트 설정 필요");
-  setText("#desktopPriceLabel", launchConfig.commerce?.desktopPriceLabel || "$24");
-  setText("#checkoutProviderLabel", launchConfig.commerce?.checkoutProvider || "결제 제공업체 설정 필요");
+  setText("#sellerName", launchConfig.seller?.displayName || "브랜드 판매자 설정 필요");
+  setText(
+    "#supportEmail",
+    launchConfig.seller?.supportEmail || "별도 브랜드 지원 채널 연결 대기"
+  );
+  setText("#websiteLabel", launchConfig.seller?.websiteUrl || "공개 웹사이트 연결 대기");
+  setText("#desktopPriceLabel", launchConfig.commerce?.desktopPriceLabel || "출시 가격 설정 대기");
+  setText(
+    "#checkoutProviderLabel",
+    launchConfig.commerce?.checkoutProvider || "브랜드 스토어 연결 대기"
+  );
 }
 
 function renderReadiness() {
   const checks = [
     {
       ok: Boolean(launchConfig.seller?.supportEmail || launchConfig.links?.supportUrl),
-      label: "지원 채널 설정 완료",
+      label: "별도 브랜드 지원 채널 연결 완료",
     },
     {
       ok: Boolean(launchConfig.links?.purchaseUrl),
-      label: "데스크톱 결제 링크 설정 완료",
+      label: "데스크톱 결제 링크 연결 완료",
     },
     {
       ok: Boolean(launchConfig.links?.webDemoUrl),
@@ -201,19 +207,19 @@ function renderReadiness() {
     },
     {
       ok: Boolean(launchConfig.commerce?.windowsDownloadUrl),
-      label: "Windows 다운로드 링크 연결 완료",
+      label: "Windows 직접 다운로드 링크 연결 완료",
     },
     {
       ok: Boolean(launchConfig.commerce?.macDownloadUrl),
-      label: "macOS 다운로드 링크 연결 완료",
+      label: "macOS 직접 다운로드 링크 연결 완료",
     },
     {
       ok: Boolean(launchConfig.commerce?.androidStoreUrl),
-      label: "Android 스토어 링크 연결 완료",
+      label: "추가 확장 채널 연결 완료",
     },
     {
       ok: Boolean(launchConfig.commerce?.iosStoreUrl),
-      label: "iOS 스토어 링크 연결 완료",
+      label: "추가 확장 채널 연결 완료",
     },
   ];
 
@@ -227,7 +233,7 @@ function renderReadiness() {
   for (const item of checks) {
     const node = document.createElement("li");
     node.dataset.state = item.ok ? "success" : "warning";
-    node.textContent = `${item.ok ? "완료" : "필요"} · ${item.label}`;
+    node.textContent = `${item.ok ? "완료" : "대기"} · ${item.label}`;
     list.append(node);
   }
 }

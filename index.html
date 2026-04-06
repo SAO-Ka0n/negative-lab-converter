@@ -5,330 +5,381 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="안드로이드, iOS, Windows, macOS에서 쓸 수 있는 오프라인 사진 변환 앱"
+      content="HEIC, TIFF, JPEG, PNG, WebP와 검증된 RAW 파일을 서버 업로드 없이 로컬에서 변환하는 데스크톱 사진 유틸리티"
     />
-    <meta name="theme-color" content="#ded4c4" />
-    <link rel="manifest" href="./manifest.webmanifest" />
-    <link rel="icon" href="./icons/app-icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="./icons/app-icon.svg" />
     <title>Negative Lab Converter</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./icons/app-icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./launch.css" />
+    <script src="./product-config.js"></script>
+    <script src="./launch-config.js"></script>
+    <script src="./launch.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#uploader">파일 선택으로 바로가기</a>
-    <div class="grain"></div>
-    <main class="shell">
-      <section class="hero">
-        <div class="hero-topline">
-          <p class="eyebrow">오프라인 사진 변환 유틸리티</p>
-          <div class="platform-strip" aria-label="지원 플랫폼">
-            <span>안드로이드</span>
-            <span>아이폰</span>
-            <span>윈도우</span>
-            <span>맥</span>
+    <a class="skip-link" href="#pricing">가격 섹션으로 바로가기</a>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main class="page-shell">
+      <section class="hero-panel">
+        <header class="topline">
+          <p class="eyebrow">Direct Download Launch</p>
+          <div class="topline-badges" aria-label="지원 플랫폼">
+            <span>Offline</span>
+            <span>Windows</span>
+            <span>macOS</span>
+            <span>No Cloud Upload</span>
           </div>
-        </div>
+        </header>
 
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="serial-tag">로컬 에디션 NLC-24B</p>
+            <p class="serial">Release Line NLC-26B</p>
             <h1>Negative Lab Converter</h1>
-            <p class="lede">
-              사진을 올리면 이 기기 안에서 바로 변환을 끝냅니다. 클라우드 업로드
-              없이 <span>PNG / JPEG / WebP / TIFF</span> 출력과 HEIC, RAW,
-              CRAW 계열 불러오기를 처리합니다.
+            <p class="hero-lede">
+              HEIC, TIFF, JPEG, PNG, WebP와 검증된 RAW 파일을 서버 업로드 없이
+              이 기기 안에서 바로 변환하는 데스크톱 사진 유틸리티입니다.
+              개인정보가 섞인 원본 파일을 외부 SaaS에 올리기 싫은 사용자,
+              필름 스캔 파일을 빠르게 정리해야 하는 사용자, 로컬 작업 흐름이
+              중요한 사용자에게 맞춰 설계했습니다.
             </p>
+
             <div class="hero-actions">
-              <a class="hero-cta" href="#uploader">사진 선택으로 바로가기</a>
+              <a class="primary-link" href="#pricing">정식판 가격 보기</a>
+              <a
+                class="primary-link accent-link"
+                data-link-key="purchaseUrl"
+                href=""
+                >구매 요청 남기기</a
+              >
+              <a class="secondary-link" data-link-key="webDemoUrl" href="">웹 데모 보기</a>
             </div>
+
+            <ul class="hero-points">
+              <li>클라우드 업로드 없이 로컬에서 바로 변환</li>
+              <li>HEIC, TIFF, PNG, JPEG, WebP와 검증된 CR2 흐름 지원</li>
+              <li>현재는 GitHub 이슈로 구매 요청을 받고 별도 결제 링크를 회신</li>
+            </ul>
           </div>
 
-          <aside class="hero-note">
-            <p class="note-kicker">간단 메모</p>
-            <p class="note-copy">
-              첫 화면에서 바로 파일 선택으로 이어지도록 구성했습니다. 변환 설정과
-              결과 비교는 같은 흐름 안에서 이어집니다.
-            </p>
-            <div class="hero-meta">
-              <div>
-                <span class="meta-label">지원 환경</span>
-                <strong>Android · iPhone · Windows · macOS</strong>
-              </div>
-              <div>
-                <span class="meta-label">동작 방식</span>
-                <strong>Offline-first PWA</strong>
-              </div>
+          <aside class="hero-sheet" aria-label="제품 요약">
+            <div class="sheet-head">
+              <span class="sheet-kicker">Product Note</span>
+              <strong>privacy-first desktop utility</strong>
+            </div>
+            <div class="sheet-grid">
+              <article>
+                <span>입력</span>
+                <strong>CR2 / HEIC / TIFF / PNG / JPEG / WebP</strong>
+              </article>
+              <article>
+                <span>출력</span>
+                <strong>PNG / JPEG / WebP / TIFF</strong>
+              </article>
+              <article>
+                <span>배포</span>
+                <strong>Windows 설치본 / macOS DMG</strong>
+              </article>
+              <article>
+                <span>라이선스</span>
+                <strong>Desktop one-time purchase</strong>
+              </article>
             </div>
           </aside>
         </div>
       </section>
 
-      <section class="workspace" id="workspace">
-        <div class="sidebar">
-          <section class="upload-panel panel panel-paper" id="uploader">
-            <div class="panel-head">
-              <span class="panel-index">01</span>
-              <div>
-                <h2>원본 등록</h2>
-                <p>파일을 올리면 미리보기와 변환 컨트롤이 바로 열립니다.</p>
-              </div>
-            </div>
-
-            <label
-              class="dropzone"
-              id="dropzone"
-              for="imageInput"
-              role="button"
-              tabindex="0"
-            >
-              <input
-                id="imageInput"
-                type="file"
-                accept="image/*,.3fr,.arw,.avif,.cr2,.cr3,.crw,.dcr,.dng,.erf,.fff,.gpr,.heic,.heif,.iiq,.k25,.kdc,.mef,.mos,.mrw,.nef,.nrw,.orf,.pef,.raf,.raw,.rw2,.sr2,.srf,.srw,.tif,.tiff,.x3f"
-              />
-              <span class="dropzone-kicker">파일 올리기</span>
-              <strong>사진을 올려서 변환 시작</strong>
-              <small>PNG, JPEG, WebP, HEIC, TIFF, RAW, CRAW 등 다양한 사진 형식</small>
-            </label>
-
-            <div class="source-summary" id="sourceSummary">
-              <span>아직 파일이 없습니다.</span>
-            </div>
-
-            <div class="button-row">
-              <button class="ghost" id="pickButton" type="button">파일 고르기</button>
-              <button class="ghost" id="resetButton" type="button" disabled>
-                초기화
-              </button>
-            </div>
-          </section>
-
-          <section class="controls-panel panel panel-ink">
-            <div class="panel-head">
-              <span class="panel-index">02</span>
-              <div>
-                <h2>변환 설정</h2>
-                <p>포맷, 비율, 압축 정도를 조정한 뒤 결과 파일을 만듭니다.</p>
-              </div>
-            </div>
-
-            <form id="controlsForm" class="controls-grid">
-              <label class="field">
-                <span>출력 포맷</span>
-                <select id="formatSelect">
-                  <option value="image/png">PNG</option>
-                  <option value="image/jpeg">JPEG</option>
-                  <option value="image/webp" selected>WebP</option>
-                  <option value="image/tiff">TIFF</option>
-                </select>
-              </label>
-
-              <label class="field">
-                <span>가로(px)</span>
-                <input
-                  id="widthInput"
-                  type="number"
-                  min="1"
-                  max="12000"
-                  step="1"
-                  inputmode="numeric"
-                  disabled
-                />
-              </label>
-
-              <label class="field">
-                <span>세로(px)</span>
-                <input
-                  id="heightInput"
-                  type="number"
-                  min="1"
-                  max="12000"
-                  step="1"
-                  inputmode="numeric"
-                  disabled
-                />
-              </label>
-
-              <label class="field toggle">
-                <span>비율 고정</span>
-                <input id="lockAspect" type="checkbox" checked disabled />
-              </label>
-
-              <label class="field range-group">
-                <span>품질</span>
-                <input
-                  id="qualityInput"
-                  type="range"
-                  min="0.4"
-                  max="1"
-                  step="0.01"
-                  value="0.92"
-                  disabled
-                />
-                <strong id="qualityValue">92%</strong>
-              </label>
-
-              <label class="field">
-                <span>JPEG 배경색</span>
-                <input id="backgroundInput" type="color" value="#f5f0e8" disabled />
-              </label>
-            </form>
-
-            <div class="status-box" id="statusBox" aria-live="polite">
-              PNG, JPEG, WebP, HEIC, TIFF, RAW 파일을 올리면 변환 준비가 됩니다.
-            </div>
-
-            <div class="button-row">
-              <button class="primary" id="convertButton" type="button" disabled>
-                변환 실행
-              </button>
-              <button class="ghost" id="downloadButton" type="button" disabled>
-                결과 저장
-              </button>
-            </div>
-          </section>
+      <section class="proof-panel">
+        <div class="section-head">
+          <p class="section-chip">Why This Product</p>
+          <h2>돈을 내는 이유는 화려한 편집 기능이 아니라 로컬 처리의 확실함입니다.</h2>
         </div>
 
-        <section class="preview-panel panel panel-contact">
-          <div class="panel-head">
-            <span class="panel-index">03</span>
-            <div>
-              <h2>비교 보기</h2>
-              <p>원본과 결과물을 같은 화면에서 비교합니다.</p>
-            </div>
-          </div>
-
-          <div class="preview-grid">
-            <article class="preview-card">
-              <div class="preview-title">
-                <span>원본</span>
-                <strong id="originalMeta">파일 없음</strong>
-              </div>
-              <div class="preview-frame" id="originalFrame">
-                <p>원본 이미지가 여기 표시됩니다.</p>
-                <img id="originalPreview" alt="원본 이미지 미리보기" hidden />
-              </div>
-            </article>
-
-            <article class="preview-card">
-              <div class="preview-title">
-                <span>결과</span>
-                <strong id="convertedMeta">변환 대기중</strong>
-              </div>
-              <div class="preview-frame" id="convertedFrame">
-                <p>변환 후 결과가 여기 표시됩니다.</p>
-                <img id="convertedPreview" alt="변환 이미지 미리보기" hidden />
-              </div>
-            </article>
-          </div>
-        </section>
-      </section>
-
-      <section class="diagnostics-panel panel panel-ink" id="diagnostics">
-        <div class="panel-head">
-          <span class="panel-index">04</span>
-          <div>
-            <h2>실행 진단</h2>
-            <p>Windows 앱으로 열었을 때 현재 실행 환경과 디코더 준비 상태를 바로 확인합니다.</p>
-          </div>
-        </div>
-
-        <div class="diagnostics-layout">
-          <article class="diagnostics-card">
-            <div class="diagnostics-card-head">
-              <p class="diagnostics-kicker">시스템 상태</p>
-              <button class="ghost diagnostics-copy" id="copyDiagnosticsButton" type="button">
-                진단 복사
-              </button>
-            </div>
-
-            <div class="diagnostics-grid">
-              <div class="diagnostic-item">
-                <span>실행 모드</span>
-                <strong id="diagnosticRuntime" data-state="neutral">확인 중</strong>
-              </div>
-              <div class="diagnostic-item">
-                <span>플랫폼</span>
-                <strong id="diagnosticPlatform" data-state="neutral">확인 중</strong>
-              </div>
-              <div class="diagnostic-item">
-                <span>엔진</span>
-                <strong id="diagnosticEngine" data-state="neutral">확인 중</strong>
-              </div>
-              <div class="diagnostic-item">
-                <span>오프라인 캐시</span>
-                <strong id="diagnosticServiceWorker" data-state="neutral">확인 중</strong>
-              </div>
-              <div class="diagnostic-item">
-                <span>HEIC / HEIF</span>
-                <strong id="diagnosticHeif" data-state="neutral">점검 대기</strong>
-              </div>
-              <div class="diagnostic-item">
-                <span>RAW / CRAW</span>
-                <strong id="diagnosticRaw" data-state="neutral">지연 로드</strong>
-              </div>
-              <div class="diagnostic-item">
-                <span>TIFF</span>
-                <strong id="diagnosticTiff" data-state="neutral">확인 중</strong>
-              </div>
-            </div>
+        <div class="proof-grid">
+          <article class="proof-card paper-card">
+            <span class="card-tag">01</span>
+            <h3>민감한 사진을 외부 서버에 올리지 않음</h3>
+            <p>
+              브라우저와 데스크톱 환경에서 모두 로컬 처리를 우선해, 원본 파일을
+              업로드형 변환기보다 더 통제된 흐름으로 다룰 수 있습니다.
+            </p>
           </article>
-
-          <article class="diagnostics-card diagnostics-log-card">
-            <div class="diagnostics-card-head">
-              <p class="diagnostics-kicker">최근 이벤트</p>
-            </div>
-            <ol class="diagnostic-log" id="diagnosticLog">
-              <li class="diagnostic-log-item" data-state="neutral">
-                <span class="diagnostic-log-time">--:--:--</span>
-                <p>진단 패널을 준비 중입니다.</p>
-              </li>
-            </ol>
+          <article class="proof-card ink-card">
+            <span class="card-tag">02</span>
+            <h3>무료 웹 변환기로 애매한 포맷을 직접 정리</h3>
+            <p>
+              HEIC, TIFF, 일반 포맷은 물론 검증된 CR2 흐름까지 포함해, 폴더
+              정리나 납품 전 변환에 바로 투입할 수 있습니다.
+            </p>
           </article>
-
-          <article class="diagnostics-card about-card">
-            <div class="diagnostics-card-head">
-              <p class="diagnostics-kicker">제품 / 지원 정보</p>
-            </div>
-
-            <div class="about-grid">
-              <div class="diagnostic-item">
-                <span>앱 버전</span>
-                <strong id="aboutVersion">확인 중</strong>
-              </div>
-              <div class="diagnostic-item">
-                <span>판매자</span>
-                <strong id="aboutSeller">확인 중</strong>
-              </div>
-              <div class="diagnostic-item">
-                <span>지원 채널</span>
-                <strong id="aboutSupport">설정 확인 중</strong>
-              </div>
-              <div class="diagnostic-item">
-                <span>배포 구조</span>
-                <strong id="aboutDistribution">확인 중</strong>
-              </div>
-            </div>
-
-            <div class="about-links">
-              <a class="resource-link" id="aboutSupportLink" href="#" target="_blank" hidden>지원 문의</a>
-              <a class="resource-link" id="aboutPrivacyLink" href="#" target="_blank" hidden>개인정보처리방침</a>
-              <a class="resource-link" id="aboutTermsLink" href="#" target="_blank" hidden>이용약관</a>
-              <a class="resource-link" id="aboutRefundLink" href="#" target="_blank" hidden>환불 정책</a>
-              <a class="resource-link" id="aboutNoticesLink" href="#" target="_blank" hidden>오픈소스 고지</a>
-            </div>
-
-            <p class="about-note" id="aboutNote">
-              판매용 연락처와 결제 링크를 설정하면 앱 안에서도 상업용 안내를 바로 제공할 수 있습니다.
+          <article class="proof-card paper-card">
+            <span class="card-tag">03</span>
+            <h3>설치형 유틸리티라서 반복 사용이 쉽다</h3>
+            <p>
+              웹사이트 하나로 끝나는 체험용이 아니라, 설치 후 계속 같은 품질로
+              쓰는 작업 도구로 설계되어 있습니다.
             </p>
           </article>
         </div>
       </section>
-    </main>
 
-    <script src="./vendor/pako/pako.min.js"></script>
-    <script src="./vendor/utif/UTIF.js"></script>
-    <script src="./product-config.js"></script>
-    <script src="./app.js" type="module"></script>
+      <section class="readiness-panel">
+        <div class="section-head">
+          <p class="section-chip">Launch Readiness</p>
+          <h2>개인 메일이 아니라 별도 판매 채널로만 공개되도록 막아둔 상태입니다.</h2>
+        </div>
+
+        <div class="readiness-grid">
+          <article class="readiness-card">
+            <span class="section-chip">현재 상태</span>
+            <ul class="readiness-list" id="readinessList">
+              <li>판매 준비 상태를 계산하는 중입니다.</li>
+            </ul>
+          </article>
+
+          <article class="readiness-card subtle-card">
+            <span class="section-chip">판매자 정보</span>
+            <dl class="contact-grid">
+              <div>
+                <dt>판매자</dt>
+                <dd id="sellerName">확인 중</dd>
+              </div>
+              <div>
+                <dt>지원 이메일</dt>
+                <dd id="supportEmail">설정 확인 중</dd>
+              </div>
+              <div>
+                <dt>웹사이트</dt>
+                <dd id="websiteLabel">설정 확인 중</dd>
+              </div>
+              <div>
+                <dt>기본 가격</dt>
+                <dd id="desktopPriceLabel">문의형</dd>
+              </div>
+              <div>
+                <dt>결제 채널</dt>
+                <dd id="checkoutProviderLabel">Direct Email</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="proof-panel">
+        <div class="section-head">
+          <p class="section-chip">Best Fit</p>
+          <h2>이 앱이 잘 맞는 사용자는 명확합니다.</h2>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card ink-card">
+            <span class="card-tag">A</span>
+            <h3>필름 스캔 파일 정리</h3>
+            <p>필름 스캔 결과물을 JPEG, PNG, TIFF로 다시 정리해야 할 때 로컬 도구처럼 바로 씁니다.</p>
+          </article>
+          <article class="proof-card paper-card">
+            <span class="card-tag">B</span>
+            <h3>HEIC와 iPhone 사진 정리</h3>
+            <p>HEIC 파일을 공유 가능한 포맷으로 바꾸면서, 원본 업로드 없이 빠르게 정리합니다.</p>
+          </article>
+          <article class="proof-card ink-card">
+            <span class="card-tag">C</span>
+            <h3>프라이버시 민감 워크플로</h3>
+            <p>고객 사진이나 업무용 원본을 외부 SaaS에 올리기 싫은 경우에 특히 가치가 큽니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="downloads-panel" id="downloads">
+        <div class="section-head">
+          <p class="section-chip">Included In v1</p>
+          <h2>정식판에 포함될 핵심 항목</h2>
+        </div>
+
+        <div class="download-grid">
+          <article class="download-card">
+            <div class="download-meta">
+              <span class="download-kicker">Windows</span>
+              <h3>Setup 0.1.0</h3>
+              <p>설치형 유틸리티. 일반 사용자 기준 가장 빠르게 판매 시작할 수 있는 배포물입니다.</p>
+            </div>
+            <a
+              class="download-link"
+              data-link-key="windowsDownloadUrl"
+              href=""
+              >Windows 다운로드</a
+            >
+          </article>
+
+          <article class="download-card">
+            <div class="download-meta">
+              <span class="download-kicker">macOS</span>
+              <h3>arm64 DMG</h3>
+              <p>Apple Silicon 기준 DMG. 공개 판매 전에는 서명·노터라이즈 단계가 남아 있습니다.</p>
+            </div>
+            <a
+              class="download-link"
+              data-link-key="macDownloadUrl"
+              href=""
+              >macOS 다운로드</a
+            >
+          </article>
+
+          <article class="download-card subtle-card">
+            <div class="download-meta">
+              <span class="download-kicker">Policy & Copy</span>
+              <h3>출시 문서</h3>
+              <p>개인정보처리방침, 스토어 설명문, 출시 체크리스트 초안 포함.</p>
+            </div>
+            <div class="doc-links">
+              <a data-doc-key="privacyPolicyUrl" href="./PRIVACY_POLICY.md">개인정보처리방침</a>
+              <a data-doc-key="termsUrl" href="./TERMS_OF_USE.md">이용약관</a>
+              <a data-doc-key="refundPolicyUrl" href="./REFUND_POLICY.md">환불 정책</a>
+              <a data-doc-key="noticesUrl" href="./THIRD_PARTY_NOTICES.md">오픈소스 고지</a>
+              <a data-doc-key="storeCopyUrl" href="./STORE_COPY_DRAFT.md">스토어 설명문</a>
+              <a data-doc-key="launchChecklistUrl" href="./LAUNCH_CHECKLIST.md">출시 체크리스트</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="format-panel">
+        <div class="section-head">
+          <p class="section-chip">Format Coverage</p>
+          <h2>지원 형식</h2>
+        </div>
+
+        <div class="format-grid">
+          <article class="format-card">
+            <span class="format-kicker">Input</span>
+            <ul>
+              <li>PNG</li>
+              <li>JPEG</li>
+              <li>WebP</li>
+              <li>HEIC / HEIF</li>
+              <li>TIFF</li>
+              <li>CR2 (실파일 검증)</li>
+              <li>기타 RAW 계열은 best-effort</li>
+            </ul>
+          </article>
+          <article class="format-card">
+            <span class="format-kicker">Output</span>
+            <ul>
+              <li>PNG</li>
+              <li>JPEG</li>
+              <li>WebP</li>
+              <li>TIFF</li>
+              <li>리사이즈</li>
+              <li>JPEG 배경색</li>
+              <li>품질 슬라이더</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="downloads-panel mobile-panel">
+        <div class="section-head">
+          <p class="section-chip">Roadmap</p>
+          <h2>처음에는 단순하게 팔고, 매출이 생기면 확장합니다.</h2>
+        </div>
+
+        <div class="download-grid">
+          <article class="download-card">
+            <div class="download-meta">
+              <span class="download-kicker">Phase 1</span>
+              <h3>Desktop direct sale</h3>
+              <p>정식판 1회 구매, 직접 다운로드, 간단한 지원 정책만으로 가장 빨리 판매를 시작합니다.</p>
+            </div>
+            <a class="download-link" href="#pricing">현재 가격 보기</a>
+          </article>
+
+          <article class="download-card">
+            <div class="download-meta">
+              <span class="download-kicker">Phase 2</span>
+              <h3>Batch / presets / lab edition</h3>
+              <p>첫 매출 이후에는 배치 변환, 카메라별 프리셋, 스튜디오용 확장판으로 올립니다.</p>
+            </div>
+            <a class="download-link" href="#downloads">포함 항목 다시 보기</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="pricing-panel" id="pricing">
+        <div class="section-head">
+          <p class="section-chip">Launch Pricing</p>
+          <h2>첫 판매를 만들기 위한 단순한 가격 구조</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="price-kicker">Recommended</span>
+            <h3>Desktop License</h3>
+            <p class="price">US$24</p>
+            <ul>
+              <li>Windows 설치본 + macOS DMG 제공</li>
+              <li>오프라인 변환과 기본 포맷 지원</li>
+              <li>1.x 업데이트 포함</li>
+            </ul>
+          </article>
+
+          <article class="price-card muted">
+            <span class="price-kicker">Upsell Later</span>
+            <h3>Studio Pack</h3>
+            <p class="price">US$79</p>
+            <ul>
+              <li>배치 변환</li>
+              <li>프리셋 저장</li>
+              <li>메타데이터/워크플로 확장은 후속 릴리스</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pricing-actions">
+          <a
+            class="download-link"
+            data-link-key="purchaseUrl"
+            href=""
+            >구매 요청 남기기</a
+          >
+          <a
+            class="secondary-link dark-outline"
+            data-link-key="webDemoUrl"
+            href=""
+            >웹 데모 보기</a
+          >
+          <a class="secondary-link dark-outline" href="#downloads">포함 항목 보기</a>
+        </div>
+      </section>
+
+      <section class="faq-panel">
+        <div class="section-head">
+          <p class="section-chip">FAQ</p>
+          <h2>출시 전에 자주 막히는 질문</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article>
+            <h3>사진이 서버로 업로드되나요?</h3>
+            <p>기본 앱 동작 기준으로는 업로드 없이 로컬에서 직접 처리합니다.</p>
+          </article>
+          <article>
+            <h3>구매는 어떻게 진행되나요?</h3>
+            <p>
+              지금은 GitHub 이슈를 통해 구매 요청을 받고, 이후 별도 결제 링크나
+              인보이스 방식으로 연결하는 초기 판매 단계입니다.
+            </p>
+          </article>
+          <article>
+            <h3>누가 사야 하나요?</h3>
+            <p>
+              HEIC/TIFF/RAW를 자주 정리하는 개인 사용자, 필름 스캔 사용자,
+              프라이버시 민감 작업자가 핵심 대상입니다.
+            </p>
+          </article>
+          <article>
+            <h3>정식 출시 전에 남은 핵심 작업은 무엇인가요?</h3>
+            <p>별도 판매자 채널 연결, 결제 링크 연결, 코드 서명, 공개 다운로드 URL 연결입니다.</p>
+          </article>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

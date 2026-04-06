@@ -7,19 +7,20 @@ nlcRootScope.NLC_PRODUCT_CONFIG =
       productName: "Negative Lab Converter",
       version: "0.1.0",
       seller: {
-        displayName: "h.g",
-        legalName: "h.g",
+        displayName: "QuietFrame Labs",
+        legalName: "QuietFrame Labs",
         region: "Republic of Korea",
         supportEmail: "",
         supportResponseTime: "영업일 기준 2일 이내",
         websiteUrl: "",
+        supportUrl: "",
       },
       commerce: {
         desktopPriceLabel: "$24",
         checkoutProvider: "Lemon Squeezy",
         desktopLicenseLabel: "정식판 1회 구매",
         desktopPurchaseUrl: "",
-        webDemoUrl: "",
+        webDemoUrl: "https://negative-lab-converter-chatgpt.onrender.com/preview",
         windowsDownloadUrl: "./release/Negative%20Lab%20Converter%20Setup%200.1.0.exe",
         macDownloadUrl: "./release/Negative%20Lab%20Converter-0.1.0-arm64.dmg",
         androidStoreUrl: "",
@@ -49,7 +50,10 @@ nlcRootScope.NLC_PRODUCT_CONFIG =
 
     config.links = {
       purchaseUrl: config.commerce.desktopPurchaseUrl || "",
-      supportUrl: supportEmail ? `mailto:${supportEmail}?subject=${supportSubject}` : "",
+      supportUrl:
+        (supportEmail ? `mailto:${supportEmail}?subject=${supportSubject}` : "") ||
+        config.seller.supportUrl ||
+        "",
       webDemoUrl: config.commerce.webDemoUrl || "",
       websiteUrl: config.seller.websiteUrl || "",
     };
