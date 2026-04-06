@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Negative Lab Converter Team License Request
+    url: https://github.com/SAO-Ka0n/negative-lab-converter/issues/new?template=team-license-request.yml
+    about: Request a multi-seat quote or invoice for a team rollout.
   - name: Negative Lab Converter Web Demo
     url: https://negative-lab-converter-chatgpt.onrender.com/preview
     about: Try the browser demo before requesting a desktop build.

@@ -1,0 +1,75 @@
+name: Team license request
+description: Request a multi-seat quote or invoice for Negative Lab Converter
+title: "Team license request: "
+labels:
+  - sales
+  - team-sales
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Leave the details below and we will follow up with a quote, invoice route, or checkout option.
+  - type: input
+    id: organization
+    attributes:
+      label: Organization
+      placeholder: QuietFrame Studio
+    validations:
+      required: true
+  - type: input
+    id: seat_count
+    attributes:
+      label: Estimated seats
+      placeholder: 5
+    validations:
+      required: true
+  - type: dropdown
+    id: os_mix
+    attributes:
+      label: Operating system mix
+      options:
+        - Windows only
+        - macOS only
+        - Mixed Windows and macOS
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow and file formats
+      description: Describe the formats, volume, and privacy requirements.
+      placeholder: We handle client HEIC and TIFF files every day and need an offline desktop tool for 8 seats.
+    validations:
+      required: true
+  - type: dropdown
+    id: billing_route
+    attributes:
+      label: Preferred billing route
+      options:
+        - Send a checkout link
+        - Send an invoice
+        - Open to either
+    validations:
+      required: true
+  - type: input
+    id: billing_country
+    attributes:
+      label: Billing country
+      placeholder: Japan
+    validations:
+      required: true
+  - type: input
+    id: target_timeline
+    attributes:
+      label: Target purchase timeline
+      placeholder: This week / this month / evaluating options
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Preferred contact method
+      description: Leave an email or another reachable contact if you want a direct response.
+      placeholder: name@example.com
+    validations:
+      required: true
