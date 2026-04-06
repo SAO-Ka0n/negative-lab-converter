@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sao-ka0n.github.io/negative-lab-converter/sitemap.xml
